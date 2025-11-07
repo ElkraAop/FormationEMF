@@ -1,3 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    name=""/>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="formation" nsURI="http://m2sdl.formation" nsPrefix="formation">
+  <eClassifiers xsi:type="ecore:EClass" name="Annee">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="DateDebut" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate" iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="DateFin" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Formations" lowerBound="1"
+        upperBound="-1" eType="#//Formation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Formation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Cours" lowerBound="1" upperBound="-1"
+        eType="#//Cour"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Stages" lowerBound="1"
+        upperBound="-1" eType="#//Stage"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Cour">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Sujet" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Prof" lowerBound="1" eType="#//Professeur"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Discipline" lowerBound="1"
+        eType="#//Discipline"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Stage">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Sujet" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Prof" lowerBound="1" eType="#//Professeur"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Discipline" lowerBound="1"
+        eType="#//Discipline"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Professeur">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Nom" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="qualification" upperBound="-1"
+        eType="#//Discipline"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Discipline">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Label" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>
