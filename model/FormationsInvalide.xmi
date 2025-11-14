@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<formation:Formations
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:formation="http://m2sdl.formation"
+    xsi:schemaLocation="http://m2sdl.formation Formation.ecore">
+  <formation
+      label="Formation1">
+    <stage Sujet="Base de données"
+        professeur="//@professeurs/@professeur.1"
+        Discipline="Informatique"/>
+    <cour Sujet="Marketing"
+        Prof="//@professeurs/@professeur.1"
+        Discipline="Economie"/>
+    <cour Sujet="Algèbre"
+        Prof="//@professeurs/@professeur.1"/>
+  </formation>
+  <formation
+      label="Formation2">
+    <cour Sujet="Base de données avancée"
+        Prof="//@professeurs/@professeur.0"
+        Discipline="Informatique"/>
+  </formation>
+  <annee DateDebut="2022"
+      DateFin="2023"/>
+  <professeurs>
+    <professeur
+        Nom="Mr.Bad">
+      <Discipline>Math</Discipline>
+      <Discipline>Informatique</Discipline>
+    </professeur>
+    <professeur
+        Nom="Mr.Good">
+      <Discipline>Math</Discipline>
+    </professeur>
+  </professeurs>
+</formation:Formations>
